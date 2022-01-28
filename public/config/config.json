@@ -1,0 +1,18 @@
+{
+  "CONTRACT_ADDRESS": "0xd54523b09D22426212c8923515021ba0b9a247ef",
+  "SCAN_LINK": "https://polygonscan.com/token/0xd54523b09D22426212c8923515021ba0b9a247ef",
+  "NETWORK": {
+    "NAME": "Polygon",
+    "SYMBOL": "Matic",
+    "ID": 137
+  },
+  "NFT_NAME": "Unique Feesh",
+  "SYMBOL": "MFSH",
+  "MAX_SUPPLY": 5000,
+  "WEI_COST": 20000000000000000000,
+  "DISPLAY_COST": 20,
+  "GAS_LIMIT": 500000,
+  "MARKETPLACE": "Opeansea",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/meh-feeshes-nft",
+  "SHOW_BACKGROUND": true
+}
