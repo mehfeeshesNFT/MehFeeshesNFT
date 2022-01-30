@@ -18,9 +18,9 @@ export const StyledButton = styled.button`
   color: var(--secondary-text);
   width: 100px;
   cursor: pointer;
-  box-shadow: 0px 6px 0px -2px rgba(19, 73, 74, 0.3);
-  -webkit-box-shadow: 0px 6px 0px -2px rgba(19, 73, 74, 0.3);
-  -moz-box-shadow: 0px 6px 0px -2px rgba(19, 73, 74, 0.3);
+  box-shadow: 0px 5px 11px 9px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 1, 0.9);
+  -moz-box-shadow: 0px 6px 0px 9px rgba(0, 0, 0, 0.9);
   :active {
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -43,9 +43,9 @@ export const StyledRoundButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 4px 0px -2px rgba(19, 73, 74, 0.3);
-  -webkit-box-shadow: 0px 4px 0px -2px rgba(19, 73, 74, 0.3);
-  -moz-box-shadow: 0px 4px 0px -2px rgba(19, 73, 74, 0.3);
+  box-shadow: 0px 5px 11px 9px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 1, 0.9);
+  -moz-box-shadow: 0px 6px 0px 9px rgba(0, 0, 0, 0.9);
   :active {
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -75,16 +75,16 @@ export const StyledLogo = styled.img`
 `;
 
 export const StyledImg = styled.img`
-  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px dashed var(--secondary);
+  box-shadow: 0px 5px 11px 9px rgba(0, 0, 0, 0.9);
+  border: 2px dashed var(--secondary);
   background-color: var(--accent);
   border-radius: 100%;
-  width: 200px;
+  width: 100px;
   @media (min-width: 900px) {
-    width: 250px;
+    width: 200px;
   }
   @media (min-width: 1000px) {
-    width: 300px;
+    width: 350px;
   }
   transition: width 0.5s;
 `;
@@ -211,7 +211,8 @@ function App() {
             color: "var(--primary-text)",
           }}
         >
-          A collection of 5000 NFTs, ready to be minted. Get yourself lucky with some unique and rare Feeshes.
+          MFSH is a collection of 5,000 code generated unique Feesh NFTs in Polygon blockchain.  
+
         </s.TextDescription>
         <s.TextDescription
           style={{
@@ -219,8 +220,10 @@ function App() {
             color: "var(--primary-text)",
           }}
         >
-          Meh...
+          A new era has arrived in the Metaverse.
+          Get your Unique NFT and be a member of the Feesh Club. Meh...
         </s.TextDescription>
+        <s.SpacerMedium />
         <span
               style={{
                 textAlign: "center",
@@ -247,8 +250,9 @@ function App() {
                 {CONFIG.MARKETPLACE}
               </StyledButton>
             </span>
+            <s.SpacerMedium />
         </s.Container>
-        <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
+        <ResponsiveWrapper flex={1} style={{ padding: 1 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg alt={"example"} src={"/config/images/example.gif"} />
           </s.Container>
@@ -259,53 +263,34 @@ function App() {
             ai={"center"}
             style={{
               backgroundColor: "var(--accent)",
-              padding: 24,
-              borderRadius: 24,
-              border: "4px dashed var(--secondary)",
-              boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
+              padding: 1,
+              borderRadius: 1,
+              border: "2px dashed var(--secondary)",
+              boxShadow: "0px 5px 11px 9px rgba(0,0,0,0.9)",
             }}
           >
+            <s.SpacerLarge />
             <s.TextTitle
               style={{
                 textAlign: "center",
-                fontSize: 50,
-                fontWeight: "bold",
-                color: "var(--secondary)",
-              }}
-            >
-              Minting will begin soon!
-            </s.TextTitle>
-           <s.TextTitle
-              style={{
-                textAlign: "center",
                 fontSize: 20,
-                fontWeight: "bold",
+                fontWeight: "normal",
                 color: "var(--secondary)",
               }}
             >
-              NFTs to be Minted: {CONFIG.MAX_SUPPLY}
+              Your NFT will be revealed soon!
             </s.TextTitle>
             <s.TextTitle
               style={{
                 textAlign: "center",
                 fontSize: 20,
-                fontWeight: "bold",
+                fontWeight: "normal",
                 color: "var(--secondary)",
               }}
             >
              Minted: {data.totalSupply} , Remaining: {CONFIG.MAX_SUPPLY - data.totalSupply}
             </s.TextTitle>
-            <s.TextDescription
-              style={{
-                textAlign: "center",
-                color: "var(--accent-text)",
-              }}
-            >
-              <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-              </StyledLink>
-            </s.TextDescription>
-            <s.SpacerSmall />
+            <s.SpacerSmall/>
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
               <>
                 <s.TextTitle
@@ -380,6 +365,18 @@ function App() {
                         </s.TextDescription>
                       </>
                     ) : null}
+                    <s.SpacerSmall/>
+                    <s.TextDescription
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "var(--accent-text)",
+              }}
+            >
+              <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
+               Verified Contract: {truncate(CONFIG.CONTRACT_ADDRESS, 42)}
+              </StyledLink>
+            </s.TextDescription>
                   </s.Container>
                 ) : (
                   <>
@@ -436,6 +433,18 @@ function App() {
                         {claimingNft ? "WAIT..." : "MINT"}
                       </StyledButton>
                     </s.Container>
+                    <s.SpacerSmall/>
+                    <s.TextDescription
+                       style={{
+                       textAlign: "center",
+                       fontWeight: "bold",
+                       color: "var(--accent-text)",
+                       }}
+                      >
+                     <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
+                     Verified Contract: {truncate(CONFIG.CONTRACT_ADDRESS, 42)}
+                     </StyledLink>
+                    </s.TextDescription>
                   </>
                 )}
               </>
